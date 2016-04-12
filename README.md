@@ -1,6 +1,8 @@
 # React Native Qiniu SDK
 
-##非官方SDK,在开发阶段,未发布到npm,请不要使用
+纯JavaScript实现的Qiniu SDK,
+
+**非官方SDK,在开发阶段,未发布到npm,请暂时不要使用!**
 
 ##进行中
 
