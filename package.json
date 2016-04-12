@@ -1,0 +1,17 @@
+{
+  "name": "react-native-qiniu",
+  "version": "0.0.1",
+  "description": "Qiniu React Native SDK ,A pure javascript implements.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "React",
+    "Native",
+    "Qiniu",
+    "SDK"
+  ],
+  "author": "buhe",
+  "license": "MIT"
+}
