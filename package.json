@@ -16,6 +16,7 @@
   "license": "MIT",
   "dependencies": {
     "base-64": "^0.1.0",
-    "crypto-js": "^3.1.6"
+    "crypto-js": "^3.1.6",
+    "url-parse": "^1.1.1"
   }
 }

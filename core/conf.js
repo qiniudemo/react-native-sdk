@@ -1,5 +1,5 @@
-exports.ACCESS_KEY = 'KRXNjCvmYMuc2AivStgqoM_APyEskT_AUIFSiwJS';
-exports.SECRET_KEY = 'oPs_4CpDqwpAZReFBZxW6i7LLl8QPbvYIsePuxAZ';
+exports.ACCESS_KEY = '<YOU AK>';
+exports.SECRET_KEY = '<YOU SK>';
 
 exports.UP_HOST = 'http://upload.qiniu.com';
 exports.RS_HOST = 'http://rs.qbox.me';

@@ -18,3 +18,28 @@ exports.uploadImage = function (uri, key, token, onresp) {
     onresp(response);
   });
 }
+
+//发送管理和fop命令,总之就是不上传文件
+exports.post = function (uri, adminToken,content) {
+  var headers = {
+    'Content-Type': 'application/x-www-form-urlencoded',
+  };
+  let payload = {
+    headers: headers,
+    method: 'POST',
+    dataType: 'json',
+    timeout: conf.RPC_TIMEOUT,
+  };
+  if(typeof content === 'undefined'){
+    payload.headers['Content-Length'] = 0;
+  }else{
+    //carry data
+    payload.body = content;
+  }
+
+  if (adminToken) {
+    headers['Authorization'] = adminToken;
+  }
+
+  return fetch(uri, payload);
+}
