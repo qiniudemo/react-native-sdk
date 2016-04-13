@@ -102,7 +102,7 @@ function GetPolicy(expires) {
   this.expires = expires || 3600;
 }
 
-GetPolicy.prototype.makeRequest = function(baseUrl, mac) {
+GetPolicy.prototype.makeRequest = function(baseUrl) {
   var deadline = this.expires + Math.floor(Date.now() / 1000);
 
   if (baseUrl.indexOf('?') >= 0) {
