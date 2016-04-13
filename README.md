@@ -19,7 +19,7 @@ var putPolicy = new qiniu.auth.PutPolicy2(
     {scope: "<Bucket>:<Key>"}
 );
 var uptoken = putPolicy.token();
-qiniu.rpc.uploadImage(this.state.avatarSource.uri, <KEY>, uptoken, function (resp) {
+qiniu.rpc.uploadImage(<LOCAL_URL>, <KEY>, uptoken, function (resp) {
    console.log(JSON.stringify(resp));
 });
 
