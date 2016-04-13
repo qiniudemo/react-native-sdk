@@ -19,7 +19,7 @@ var putPolicy = new qiniu.auth.PutPolicy2(
     {scope: "<Bucket>:<Key>"}
 );
 var uptoken = putPolicy.token();
-qiniu.rpc.uploadImage(this.state.avatarSource.uri, 'testreactnative.jpg', uptoken, function (resp) {
+qiniu.rpc.uploadImage(this.state.avatarSource.uri, <KEY>, uptoken, function (resp) {
    console.log(JSON.stringify(resp));
 });
 
@@ -48,7 +48,7 @@ fetch(url).then((response) => {
 //resource operation
 //stat info
 var self = this;
-qiniu.rs.Client.stat("android-release", "testreactnative.jpg")
+qiniu.rs.Client.stat(<BUCKET>, <KEY)
         .then((response) => response.text())
         .then((responseText) => {
           self.setState({info: responseText});
