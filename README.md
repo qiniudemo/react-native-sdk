@@ -2,7 +2,7 @@
 
 纯JavaScript实现的Qiniu SDK,
 
-**非官方SDK,在开发阶段,未发布到npm,请暂时不要使用!**
+**非官方SDK**
 
 ##进行中
 
