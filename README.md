@@ -9,7 +9,7 @@ npm i react-native-qiniu
 
 ##使用方法
 
-```
+```javascript
 var qiniu = require('react-native-qiniu');
 qiniu.conf.ACCESS_KEY = <AK>
 qiniu.conf.SECRET_KEY = <SK>
