@@ -1,3 +1,6 @@
+/**
+ * Created by buhe on 16/4/12.
+ */
 exports.ACCESS_KEY = '<YOU AK>';
 exports.SECRET_KEY = '<YOU SK>';
 

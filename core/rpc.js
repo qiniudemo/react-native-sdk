@@ -1,9 +1,7 @@
 /**
- * Created by guguyanhua on 16/4/12.
- * react native implements
+ * Created by buhe on 16/4/12.
  */
 import conf from './conf.js';
-
 
 exports.uploadImage = function (uri, key, token, onresp) {
   let formData = new FormData();

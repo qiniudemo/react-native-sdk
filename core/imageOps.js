@@ -1,12 +1,10 @@
+/**
+ * Created by buhe on 16/4/12.
+ */
 var util = require('./auth');
 var rpc = require('./rpc');
 var conf = require('./conf');
 
-
-/**
- * 图片处理
- *
- */
 
 exports.ImageView = ImageView;
 exports.ImageInfo = ImageInfo;

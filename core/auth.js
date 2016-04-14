@@ -1,5 +1,5 @@
 /**
- * Created by guguyanhua on 16/4/12.
+ * Created by buhe on 16/4/12.
  */
 import base64 from 'base-64';
 import CryptoJS from "crypto-js";

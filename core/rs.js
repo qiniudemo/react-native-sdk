@@ -1,5 +1,5 @@
 /**
- * Created by guguyanhua on 16/4/12.
+ * Created by buhe on 16/4/12.
  */
 import util from './auth.js';
 import conf from './conf.js';
