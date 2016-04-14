@@ -9,7 +9,7 @@ npm i react-native-qiniu
 
 ##使用方法
 
-```
+```javascript
 var qiniu = require('react-native-qiniu');
 qiniu.conf.ACCESS_KEY = <AK>
 qiniu.conf.SECRET_KEY = <SK>
@@ -65,3 +65,7 @@ qiniu.rs.Client.stat(<BUCKET>, <KEY)
 - [x] Image Ops
 - [x] 资源管理
 - [ ] 上传进度支持
+
+##相关文章
+
+[React Native 文件上传 和 react-native-qiniu](https://medium.com/@bugu1986/react-native-%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0-%E5%92%8C-react-native-qiniu-4b3f7335090e#.ooux7ospa)
