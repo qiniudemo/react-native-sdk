@@ -2,10 +2,8 @@
 
 纯JavaScript实现的Qiniu SDK,
 
-**非官方SDK**
-
 ##安装
-npm i react-native-qiniu
+npm i react-native-qiniu  --save
 
 ##使用方法
 
