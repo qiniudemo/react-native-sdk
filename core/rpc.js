@@ -3,6 +3,10 @@
  */
 import conf from './conf.js';
 
+/**
+ * 直传文件
+ * formInput对象如何配置请参考七牛官方文档“直传文件”一节
+ */
 exports.uploadFile = function (uri, token, formInput) {
   if (typeof formInput !== 'object') {
     return false;
@@ -17,7 +21,7 @@ exports.uploadFile = function (uri, token, formInput) {
   
   let options = {};
   options.body = formData;
-  options.method = 'post';
+  options.method = 'POST';
   return fetch(conf.UP_HOST, options);
 }
 
