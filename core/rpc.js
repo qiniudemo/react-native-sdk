@@ -3,18 +3,26 @@
  */
 import conf from './conf.js';
 
-exports.uploadImage = function (uri, key, token, onresp) {
+/**
+ * 直传文件
+ * formInput对象如何配置请参考七牛官方文档“直传文件”一节
+ */
+exports.uploadFile = function (uri, token, formInput) {
+  if (typeof formInput !== 'object') {
+    return false;
+  }
+  
   let formData = new FormData();
-  formData.append('file', {uri: uri, type: 'application/octet-stream', name: key});
-  formData.append('key', key);
-  formData.append('token', token);
-
+  for (let k in formInput) {
+    formData.append(k, formInput.k);
+  }
+  if(!formInput.file) formData.append('file', {uri: uri, type: 'application/octet-stream'});
+  if(!formInput.token) formData.append('token', token);
+  
   let options = {};
   options.body = formData;
-  options.method = 'post';
-  return fetch(conf.UP_HOST, options).then((response) => {
-    onresp(response);
-  });
+  options.method = 'POST';
+  return fetch(conf.UP_HOST, options);
 }
 
 //发送管理和fop命令,总之就是不上传文件
