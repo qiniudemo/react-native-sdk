@@ -60,11 +60,20 @@ qiniu.rs.Client.stat(<BUCKET>, <KEY)
 
 ##进行中
 
+- [ ] 上传进度支持
+
+##Release Note
+###0.1.0
 - [x] 上传文件
 - [x] 私有库中文件下载功能
 - [x] Image Ops
 - [x] 资源管理
-- [ ] 上传进度支持
+###0.1.1
+- 重构 upload 方法 (CaveyChan)
+
+##Contributor
+- CaveyChan
+
 
 ##相关文章
 
