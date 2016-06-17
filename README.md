@@ -68,6 +68,7 @@ qiniu.rs.Client.stat(<BUCKET>, <KEY)
 - [x] 私有库中文件下载功能
 - [x] Image Ops
 - [x] 资源管理
+
 ###0.1.1
 - 重构 upload 方法 (CaveyChan)
 
