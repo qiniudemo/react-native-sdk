@@ -17,9 +17,11 @@ var putPolicy = new qiniu.auth.PutPolicy2(
     {scope: "<Bucket>:<Key>"}
 );
 var uptoken = putPolicy.token();
-qiniu.rpc.uploadImage(<LOCAL_URL>, <KEY>, uptoken, function (resp) {
-   console.log(JSON.stringify(resp));
-});
+let formInput = {
+    key : "<Key>",
+    // formInput对象如何配置请参考七牛官方文档“直传文件”一节
+}
+qiniu.rpc.uploadFile(<LOCAL_URL>, uptoken, formInput);
 
 //download private file
 var getPolicy = new qiniu.auth.GetPolicy();
