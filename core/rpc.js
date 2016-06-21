@@ -14,7 +14,7 @@ exports.uploadFile = function (uri, token, formInput) {
   
   let formData = new FormData();
   for (let k in formInput) {
-    formData.append(k, formInput.k);
+    formData.append(k, formInput[k]);
   }
   if(!formInput.file) formData.append('file', {uri: uri, type: 'application/octet-stream'});
   if(!formInput.token) formData.append('token', token);
