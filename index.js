@@ -1,11 +1,11 @@
 /**
  * Created by buhe on 16/4/12.
  */
-
-module.exports = {
-  rpc: require('./core/rpc'),
-  auth: require('./core/auth'),
-  rs: require('./core/rs'),
-  imgOps: require('./core/imageOps'),
-  conf: require('./core/conf')
+import rpc from './core/rpc';
+import auth from './core/auth';
+import rs from './core/rs';
+import imgOps from './core/imgOps';
+import conf from './core/conf';
+export {
+  rpc,auth,rs,imgOps,conf
 }
