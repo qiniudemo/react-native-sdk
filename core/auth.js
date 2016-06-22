@@ -20,14 +20,7 @@ function hmacSha1(encodedFlags, secretKey) {
   return encoded;
 };
 
-export {
-  urlsafeBase64Encode,
-  generateAccessToken,
-  PutPolicy2,
-  GetPolicy,
-}
-
-const generateAccessToken = function (url, body) {
+function generateAccessToken(url, body) {
   var u = parse(url, true);
 
   var path = u.pathname;
@@ -124,4 +117,11 @@ class GetPolicy {
 
     return baseUrl + '&token=' + downloadToken;
   }
+}
+
+module.exports = {
+  urlsafeBase64Encode:urlsafeBase64Encode,
+  generateAccessToken:generateAccessToken,
+  PutPolicy2:PutPolicy2,
+  GetPolicy:GetPolicy,
 }
