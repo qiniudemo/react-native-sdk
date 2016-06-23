@@ -119,9 +119,4 @@ class GetPolicy {
   }
 }
 
-module.exports = {
-  urlsafeBase64Encode:urlsafeBase64Encode,
-  generateAccessToken:generateAccessToken,
-  PutPolicy2:PutPolicy2,
-  GetPolicy:GetPolicy,
-}
+export default {urlsafeBase64Encode,generateAccessToken,PutPolicy2,GetPolicy}

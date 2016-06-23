@@ -1,11 +1,15 @@
 /**
  * Created by buhe on 16/4/12.
  */
-exports.ACCESS_KEY = '<YOU AK>';
-exports.SECRET_KEY = '<YOU SK>';
+let ACCESS_KEY = '<YOU AK>';
+let SECRET_KEY = '<YOU SK>';
 
-exports.UP_HOST = 'http://upload.qiniu.com';
-exports.RS_HOST = 'http://rs.qbox.me';
-exports.RSF_HOST = 'http://rsf.qbox.me';
-exports.API_HOST = 'http://api.qiniu.com';
-exports.RPC_TIMEOUT = 3600000; // default rpc timeout: one hour
+let UP_HOST = 'http://upload.qiniu.com';
+let RS_HOST = 'http://rs.qbox.me';
+let RSF_HOST = 'http://rsf.qbox.me';
+let API_HOST = 'http://api.qiniu.com';
+let RPC_TIMEOUT = 3600000; // default rpc timeout: one hour
+
+export default {
+  ACCESS_KEY,SECRET_KEY,UP_HOST,RS_HOST,RSF_HOST,API_HOST,RPC_TIMEOUT
+}
