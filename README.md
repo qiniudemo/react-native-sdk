@@ -48,7 +48,7 @@ fetch(url).then((response) => {
 //resource operation
 //stat info
 var self = this;
-Rs.Client.stat(<BUCKET>, <KEY)
+Rs.stat(<BUCKET>, <KEY)
         .then((response) => response.text())
         .then((responseText) => {
           self.setState({info: responseText});
