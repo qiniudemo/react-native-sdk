@@ -1,0 +1,105 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/Users/guguyanhua/.nvm/versions/node/v4.4.5/bin/node',
+1 verbose cli   '/Users/guguyanhua/.nvm/versions/node/v4.4.5/bin/npm',
+1 verbose cli   'publish' ]
+2 info using npm@2.15.5
+3 info using node@v4.4.5
+4 verbose publish [ '.' ]
+5 silly cache add args [ '.', null ]
+6 verbose cache add spec .
+7 silly cache add parsed spec Result {
+7 silly cache add   raw: '.',
+7 silly cache add   scope: null,
+7 silly cache add   name: null,
+7 silly cache add   rawSpec: '.',
+7 silly cache add   spec: '/Users/guguyanhua/github/react-native-sdk',
+7 silly cache add   type: 'directory' }
+8 verbose addLocalDirectory /Users/guguyanhua/.npm/react-native-qiniu/0.2.0/package.tgz not in flight; packing
+9 verbose correctMkdir /Users/guguyanhua/.npm correctMkdir not in flight; initializing
+10 verbose tar pack [ '/Users/guguyanhua/.npm/react-native-qiniu/0.2.0/package.tgz',
+10 verbose tar pack   '/Users/guguyanhua/github/react-native-sdk' ]
+11 verbose tarball /Users/guguyanhua/.npm/react-native-qiniu/0.2.0/package.tgz
+12 verbose folder /Users/guguyanhua/github/react-native-sdk
+13 info prepublish react-native-qiniu@0.2.0
+14 verbose addLocalTarball adding from inside cache /Users/guguyanhua/.npm/react-native-qiniu/0.2.0/package.tgz
+15 verbose correctMkdir /Users/guguyanhua/.npm correctMkdir not in flight; initializing
+16 silly cache afterAdd react-native-qiniu@0.2.0
+17 verbose afterAdd /Users/guguyanhua/.npm/react-native-qiniu/0.2.0/package/package.json not in flight; writing
+18 verbose correctMkdir /Users/guguyanhua/.npm correctMkdir not in flight; initializing
+19 verbose afterAdd /Users/guguyanhua/.npm/react-native-qiniu/0.2.0/package/package.json written
+20 silly publish { name: 'react-native-qiniu',
+20 silly publish   version: '0.2.0',
+20 silly publish   description: 'Qiniu React Native SDK ,A pure javascript implements.',
+20 silly publish   main: 'index.js',
+20 silly publish   scripts: { test: 'echo "Error: no test specified" && exit 1' },
+20 silly publish   keywords: [ 'React', 'Native', 'Qiniu', 'SDK' ],
+20 silly publish   author: { name: 'buhe' },
+20 silly publish   license: 'MIT',
+20 silly publish   dependencies:
+20 silly publish    { 'base-64': '^0.1.0',
+20 silly publish      'crypto-js': '^3.1.6',
+20 silly publish      'url-parse': '^1.1.1' },
+20 silly publish   readme: '# React Native Qiniu SDK\n\n纯JavaScript实现的Qiniu SDK,\n\n##安装\nnpm i react-native-qiniu  --save\n\n##使用方法\n\n```javascript\nimport Qiniu,{Auth,ImgOps,Conf,Rs,Rpc} from \'react-native-qiniu\';\nConf.ACCESS_KEY = <AK>\nConf.SECRET_KEY = <SK>\n\n//upload file to Qiniu\nvar putPolicy = new Auth.PutPolicy2(\n    {scope: "<Bucket>:<Key>"}\n);\nvar uptoken = putPolicy.token();\nlet formInput = {\n    key : "<Key>",\n    // formInput对象如何配置请参考七牛官方文档“直传文件”一节\n}\nRpc.uploadFile(<LOCAL_URL>, uptoken, formInput);\n\n//download private file\nvar getPolicy = new Auth.GetPolicy();\nlet url = getPolicy.makeRequest(\'http://7xp19y.com2.z0.glb.qiniucdn.com/5.jpg\');\n//fetch from this url\n\n//image sync operation\nvar imgInfo = new ImgOps.ImageView(1,100,200);\nlet url = imgInfo.makeRequest(\'http://7xoaqn.com2.z0.glb.qiniucdn.com/16704/6806d20a359f43c88f1cb3c59980e5ef\');\n//fetch from this url\n\n//image info \nvar self = this;\nvar imgInfo = new ImgOps.ImageInfo();\nlet url = imgInfo.makeRequest(\'http://7xoaqn.com2.z0.glb.qiniucdn.com/16704/6806d20a359f43c88f1cb3c59980e5ef\');\nfetch(url).then((response) => {\n      return response.text();\n    }).then((responseText) => {\n      self.setState({info: responseText});\n    }).catch((error) => {\n      console.warn(error);\n    });\n\n//resource operation\n//stat info\nvar self = this;\nRs.stat(<BUCKET>, <KEY)\n        .then((response) => response.text())\n        .then((responseText) => {\n          self.setState({info: responseText});\n        })\n        .catch((error) => {\n          console.warn(error);\n        });\n```\n\n##进行中\n\n- [ ] 上传进度支持\n\n##Release Note\n###0.1.0\n- [x] 上传文件\n- [x] 私有库中文件下载功能\n- [x] Image Ops\n- [x] 资源管理\n\n###0.1.1\n- 重构 upload 方法 (CaveyChan)\n\n###0.2.0\n- es6 style\n\n##Contributor\n- CaveyChan\n\n\n##相关文章\n\n[React Native 文件上传 和 react-native-qiniu](https://medium.com/@bugu1986/react-native-%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0-%E5%92%8C-react-native-qiniu-4b3f7335090e#.ooux7ospa)\n',
+20 silly publish   readmeFilename: 'README.md',
+20 silly publish   gitHead: 'ac155685c52f28f8b8f16247db9b3706e1f375c8',
+20 silly publish   _id: 'react-native-qiniu@0.2.0',
+20 silly publish   _shasum: '840fe388ae7c3b360c3914b6afbdb11b3a7aced6',
+20 silly publish   _from: '.' }
+21 verbose getPublishConfig undefined
+22 silly mapToRegistry name react-native-qiniu
+23 silly mapToRegistry using default registry
+24 silly mapToRegistry registry https://registry.npmjs.org/
+25 silly mapToRegistry data Result {
+25 silly mapToRegistry   raw: 'react-native-qiniu',
+25 silly mapToRegistry   scope: null,
+25 silly mapToRegistry   name: 'react-native-qiniu',
+25 silly mapToRegistry   rawSpec: '',
+25 silly mapToRegistry   spec: 'latest',
+25 silly mapToRegistry   type: 'tag' }
+26 silly mapToRegistry uri https://registry.npmjs.org/react-native-qiniu
+27 verbose publish registryBase https://registry.npmjs.org/
+28 silly publish uploading /Users/guguyanhua/.npm/react-native-qiniu/0.2.0/package.tgz
+29 verbose request uri https://registry.npmjs.org/react-native-qiniu
+30 verbose request sending authorization for write operation
+31 info attempt registry request try #1 at 2:07:45 PM
+32 verbose request using bearer token for auth
+33 verbose request id 8b42849bab808021
+34 http request PUT https://registry.npmjs.org/react-native-qiniu
+35 http 403 https://registry.npmjs.org/react-native-qiniu
+36 verbose headers { 'content-type': 'application/json',
+36 verbose headers   'cache-control': 'max-age=300',
+36 verbose headers   'content-length': '95',
+36 verbose headers   'accept-ranges': 'bytes',
+36 verbose headers   date: 'Fri, 24 Jun 2016 06:07:00 GMT',
+36 verbose headers   via: '1.1 varnish',
+36 verbose headers   connection: 'keep-alive',
+36 verbose headers   'x-served-by': 'cache-sin6924-SIN',
+36 verbose headers   'x-cache': 'MISS',
+36 verbose headers   'x-cache-hits': '0',
+36 verbose headers   'x-timer': 'S1466748419.997435,VS0,VE896',
+36 verbose headers   vary: 'Accept-Encoding' }
+37 verbose request invalidating /Users/guguyanhua/.npm/registry.npmjs.org/react-native-qiniu on PUT
+38 error publish Failed PUT 403
+39 verbose stack Error: "You cannot publish over the previously published version 0.2.0." : react-native-qiniu
+39 verbose stack     at makeError (/Users/guguyanhua/.nvm/versions/node/v4.4.5/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:264:12)
+39 verbose stack     at CachingRegistryClient.<anonymous> (/Users/guguyanhua/.nvm/versions/node/v4.4.5/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:252:14)
+39 verbose stack     at Request._callback (/Users/guguyanhua/.nvm/versions/node/v4.4.5/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:172:14)
+39 verbose stack     at Request.self.callback (/Users/guguyanhua/.nvm/versions/node/v4.4.5/lib/node_modules/npm/node_modules/request/request.js:200:22)
+39 verbose stack     at emitTwo (events.js:87:13)
+39 verbose stack     at Request.emit (events.js:172:7)
+39 verbose stack     at Request.<anonymous> (/Users/guguyanhua/.nvm/versions/node/v4.4.5/lib/node_modules/npm/node_modules/request/request.js:1067:10)
+39 verbose stack     at emitOne (events.js:82:20)
+39 verbose stack     at Request.emit (events.js:169:7)
+39 verbose stack     at IncomingMessage.<anonymous> (/Users/guguyanhua/.nvm/versions/node/v4.4.5/lib/node_modules/npm/node_modules/request/request.js:988:12)
+40 verbose statusCode 403
+41 verbose pkgid react-native-qiniu
+42 verbose cwd /Users/guguyanhua/github/react-native-sdk
+43 error Darwin 15.5.0
+44 error argv "/Users/guguyanhua/.nvm/versions/node/v4.4.5/bin/node" "/Users/guguyanhua/.nvm/versions/node/v4.4.5/bin/npm" "publish"
+45 error node v4.4.5
+46 error npm  v2.15.5
+47 error code E403
+48 error "You cannot publish over the previously published version 0.2.0." : react-native-qiniu
+49 error If you need help, you may report this error at:
+49 error     <https://github.com/npm/npm/issues>
+50 verbose exit [ 1, true ]
