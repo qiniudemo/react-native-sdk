@@ -7,18 +7,18 @@ import conf from './conf.js';
  * 直传文件
  * formInput对象如何配置请参考七牛官方文档“直传文件”一节
  */
-exports.uploadFile = function (uri, token, formInput) {
+function uploadFile(uri, token, formInput) {
   if (typeof formInput !== 'object') {
     return false;
   }
-  
+
   let formData = new FormData();
   for (let k in formInput) {
     formData.append(k, formInput[k]);
   }
-  if(!formInput.file) formData.append('file', {uri: uri, type: 'application/octet-stream'});
-  if(!formInput.token) formData.append('token', token);
-  
+  if (!formInput.file) formData.append('file', {uri: uri, type: 'application/octet-stream'});
+  if (!formInput.token) formData.append('token', token);
+
   let options = {};
   options.body = formData;
   options.method = 'POST';
@@ -26,7 +26,7 @@ exports.uploadFile = function (uri, token, formInput) {
 }
 
 //发送管理和fop命令,总之就是不上传文件
-exports.post = function (uri, adminToken,content) {
+function post(uri, adminToken, content) {
   var headers = {
     'Content-Type': 'application/x-www-form-urlencoded',
   };
@@ -36,9 +36,9 @@ exports.post = function (uri, adminToken,content) {
     dataType: 'json',
     timeout: conf.RPC_TIMEOUT,
   };
-  if(typeof content === 'undefined'){
+  if (typeof content === 'undefined') {
     payload.headers['Content-Length'] = 0;
-  }else{
+  } else {
     //carry data
     payload.body = content;
   }
@@ -49,3 +49,5 @@ exports.post = function (uri, adminToken,content) {
 
   return fetch(uri, payload);
 }
+
+export default {uploadFile,post}
