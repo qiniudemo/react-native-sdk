@@ -8,12 +8,12 @@ npm i react-native-qiniu  --save
 ##使用方法
 
 ```javascript
-var qiniu = require('react-native-qiniu');
-qiniu.conf.ACCESS_KEY = <AK>
-qiniu.conf.SECRET_KEY = <SK>
+import Qiniu,{Auth,ImgOps,Conf,Rs,Rpc} from 'react-native-qiniu';
+Conf.ACCESS_KEY = <AK>
+Conf.SECRET_KEY = <SK>
 
 //upload file to Qiniu
-var putPolicy = new qiniu.auth.PutPolicy2(
+var putPolicy = new Auth.PutPolicy2(
     {scope: "<Bucket>:<Key>"}
 );
 var uptoken = putPolicy.token();
@@ -21,21 +21,21 @@ let formInput = {
     key : "<Key>",
     // formInput对象如何配置请参考七牛官方文档“直传文件”一节
 }
-qiniu.rpc.uploadFile(<LOCAL_URL>, uptoken, formInput);
+Rpc.uploadFile(<LOCAL_URL>, uptoken, formInput);
 
 //download private file
-var getPolicy = new qiniu.auth.GetPolicy();
+var getPolicy = new Auth.GetPolicy();
 let url = getPolicy.makeRequest('http://7xp19y.com2.z0.glb.qiniucdn.com/5.jpg');
 //fetch from this url
 
 //image sync operation
-var imgInfo = new qiniu.imgOps.ImageView(1,100,200);
+var imgInfo = new ImgOps.ImageView(1,100,200);
 let url = imgInfo.makeRequest('http://7xoaqn.com2.z0.glb.qiniucdn.com/16704/6806d20a359f43c88f1cb3c59980e5ef');
 //fetch from this url
 
 //image info 
 var self = this;
-var imgInfo = new qiniu.imgOps.ImageInfo();
+var imgInfo = new ImgOps.ImageInfo();
 let url = imgInfo.makeRequest('http://7xoaqn.com2.z0.glb.qiniucdn.com/16704/6806d20a359f43c88f1cb3c59980e5ef');
 fetch(url).then((response) => {
       return response.text();
@@ -48,7 +48,7 @@ fetch(url).then((response) => {
 //resource operation
 //stat info
 var self = this;
-qiniu.rs.Client.stat(<BUCKET>, <KEY)
+Rs.Client.stat(<BUCKET>, <KEY)
         .then((response) => response.text())
         .then((responseText) => {
           self.setState({info: responseText});
@@ -71,6 +71,9 @@ qiniu.rs.Client.stat(<BUCKET>, <KEY)
 
 ###0.1.1
 - 重构 upload 方法 (CaveyChan)
+
+###0.2.0
+- es6 style
 
 ##Contributor
 - CaveyChan
