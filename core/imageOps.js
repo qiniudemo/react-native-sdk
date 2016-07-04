@@ -2,7 +2,7 @@
  * Created by buhe on 16/4/12.
  */
 import util from './auth';
-import rpc from'./rpc';
+import rpc from './rpc';
 import conf from './conf';
 
 class ImageView {
