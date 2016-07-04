@@ -77,6 +77,7 @@ Rs.stat(<BUCKET>, <KEY)
 
 ##Contributor
 - CaveyChan
+- laukey
 
 
 ##相关文章
