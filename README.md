@@ -60,7 +60,7 @@ Rs.stat(<BUCKET>, <KEY)
 
 ##进行中
 
-- [ ] 上传进度支持
+[RoadMap](https://github.com/qiniu/react-native-sdk/issues/1)
 
 ##Release Note
 ###0.1.0
