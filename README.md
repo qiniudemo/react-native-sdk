@@ -11,6 +11,7 @@ npm i react-native-qiniu  --save
 import Qiniu,{Auth,ImgOps,Conf,Rs,Rpc} from 'react-native-qiniu';
 Conf.ACCESS_KEY = <AK>
 Conf.SECRET_KEY = <SK>
+//强烈不建议在客户端保存 AK 和 SK ，反编译后 hacker 获取到可以对你的资源为所欲为，建议通过安全渠道从服务器端获取。
 
 //upload file to Qiniu
 var putPolicy = new Auth.PutPolicy2(
