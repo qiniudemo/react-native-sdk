@@ -111,8 +111,8 @@ class GetPolicy {
     }
     baseUrl += deadline;
 
-    var signature = hmacSha1(baseUrl, conf.SECRET_KEY);
-    var encodedSign = base64ToUrlSafe(signature);
+    var signature = exports.hmacSha1(baseUrl, conf.SECRET_KEY);
+    var encodedSign = exports.base64ToUrlSafe(signature);
     var downloadToken = conf.ACCESS_KEY + ':' + encodedSign;
 
     return baseUrl + '&token=' + downloadToken;
