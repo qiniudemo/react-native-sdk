@@ -76,9 +76,13 @@ Rs.stat(<BUCKET>, <KEY)
 ###0.2.0
 - es6 style
 
+###0.3.0
+- 增加 progress callback
+
 ##Contributor
 - CaveyChan
 - laukey
+- cdmalcl
 
 
 ##相关文章
