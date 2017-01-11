@@ -7,22 +7,44 @@ import conf from './conf.js';
  * 直传文件
  * formInput对象如何配置请参考七牛官方文档“直传文件”一节
  */
-function uploadFile(uri, token, formInput) {
-  if (typeof formInput !== 'object') {
-    return false;
-  }
+function uploadFile(uri, token, formInput, onprogress) {
+  return new Promise((resolve, reject)=> {
+    if (typeof uri != 'string' || uri == '' || typeof formInput.key == 'undefined') {
+      reject && reject(null);
+      return;
+    }
+    if (uri[0] == '/') {
+      uri = "file://" + uri;
+    }
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', conf.UP_HOST);
+    xhr.onload = () => {
+      if (xhr.status !== 200) {
+        reject && reject(xhr);
+        return;
+      }
 
-  let formData = new FormData();
-  for (let k in formInput) {
-    formData.append(k, formInput[k]);
-  }
-  if (!formInput.file) formData.append('file', {uri: uri, type: 'application/octet-stream'});
-  if (!formInput.token) formData.append('token', token);
+      resolve && resolve(xhr);
+    };
 
-  let options = {};
-  options.body = formData;
-  options.method = 'POST';
-  return fetch(conf.UP_HOST, options);
+    var formdata = new FormData();
+    formdata.append("key", formInput.key);
+    formdata.append("token", token);
+    if (typeof formInput.type == 'undefined')
+      formInput.type = 'application/octet-stream';
+    if (typeof formInput.name == 'undefined') {
+      var filePath = uri.split("/");
+      if (filePath.length > 0)
+        formInput.name = filePath[filePath.length - 1];
+      else
+        formInput.name = "";
+    }
+    formdata.append("file", {uri: uri, type: formInput.type, name: formInput.name});
+    xhr.upload.onprogress = (event) => {
+      onprogress && onprogress(event, xhr);
+    };
+    xhr.send(formdata);
+  });
 }
 
 //发送管理和fop命令,总之就是不上传文件
@@ -50,4 +72,4 @@ function post(uri, adminToken, content) {
   return fetch(uri, payload);
 }
 
-export default {uploadFile,post}
+export default {uploadFile, post}
