@@ -18,6 +18,9 @@ function uploadFile(uri, token, formInput, onprogress) {
     }
     var xhr = new XMLHttpRequest();
     xhr.open('POST', conf.UP_HOST);
+    
+    xhr.timeout = conf.RPC_TIMEOUT;
+    
     xhr.onload = () => {
       if (xhr.status !== 200) {
         reject && reject(xhr);
@@ -26,7 +29,17 @@ function uploadFile(uri, token, formInput, onprogress) {
 
       resolve && resolve(xhr);
     };
-
+    
+    xhr.ontimeout = (e) => {
+      reject && reject(e);
+      return;
+    }
+    
+    xhr.onerror = (e)=>{            
+        reject && reject(e);
+        return;
+    }
+    
     var formdata = new FormData();
     formdata.append("key", formInput.key);
     formdata.append("token", token);
