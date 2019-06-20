@@ -26,7 +26,7 @@ function uploadFile(uri, token, formInput, onprogress) {
         reject && reject(xhr);
         return;
       }
-
+      xhr.key = formInput.key
       resolve && resolve(xhr);
     };
     
