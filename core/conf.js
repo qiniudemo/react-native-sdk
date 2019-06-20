@@ -4,7 +4,7 @@
 let ACCESS_KEY = '<YOU AK>';
 let SECRET_KEY = '<YOU SK>';
 
-let UP_HOST = 'https://upload-z1.qiniup.com';
+let UP_HOST = 'https://upload.qiniup.com';
 let RS_HOST = 'https://rs.qbox.me';
 let RSF_HOST = 'https://rsf.qbox.me';
 let API_HOST = 'https://api.qiniu.com';
