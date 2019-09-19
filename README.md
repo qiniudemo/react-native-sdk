@@ -3,7 +3,10 @@
 纯JavaScript实现的Qiniu SDK,
 
 ## 安装
-npm i react-native-qiniu  --save
+
+```sh
+npm i @sishuguojixuefu/react-native-qiniu  --save
+```
 
 ## 使用方法
 
