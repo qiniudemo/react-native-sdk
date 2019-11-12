@@ -17,7 +17,7 @@ function uploadFile(uri, token, formInput, onprogress) {
       uri = "file://" + uri;
     }
     var xhr = new XMLHttpRequest();
-    xhr.open('POST', conf.UP_HOST);
+    xhr.open('POST', formInput.region || conf.UP_HOST);
     
     xhr.timeout = conf.RPC_TIMEOUT;
     
@@ -26,8 +26,7 @@ function uploadFile(uri, token, formInput, onprogress) {
         reject && reject(xhr);
         return;
       }
-
-      resolve && resolve(xhr);
+      resolve && resolve(formInput.key);
     };
     
     xhr.ontimeout = (e) => {

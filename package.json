@@ -1,5 +1,5 @@
 {
-  "name": "react-native-qiniu",
+  "name": "@sishuguojixuefu/react-native-qiniu",
   "version": "0.3.0",
   "description": "Qiniu React Native SDK ,A pure javascript implements.",
   "main": "index.js",
